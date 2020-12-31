@@ -16,6 +16,9 @@ Each method gets 3 arguments:
 
 #### Made by:
 Mor Gajer, git: https://github.com/morgajer2
+
 Yaring Sagiv, git: https://github.com/YarinSagiv
+
 Noa Dahan, git: https://github.com/noa-dahan
+
 Ofir Ben Zaken, git: https://github.com/ofir1350
