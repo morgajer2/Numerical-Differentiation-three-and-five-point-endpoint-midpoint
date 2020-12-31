@@ -11,3 +11,11 @@ Each method gets 3 arguments:
 * f- the func defined as above
 * x0 - the x-value you want to find the derived of. meaning  f'(x0).
 * h - the chosen difference between two close dots. The smaller h is the better the result accourency.
+
+
+
+#### Made by:
+Mor Gajer, git: https://github.com/morgajer2
+Yaring Sagiv, git: https://github.com/YarinSagiv
+Noa Dahan, git: https://github.com/noa-dahan
+Ofir Ben Zaken, git: https://github.com/ofir1350
