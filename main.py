@@ -1,15 +1,34 @@
+from sympy import *
+x = Symbol('x')
+
 def threePointEndpoint(f, x0, h):
-    return (((-3) * f[x0]) + (4 * f[round(x0 + h, 10)]) - (f[round(x0 + 2 * h, 10)])) / (2 * h)
+    # building values table for the func:
+    g = {x0: f.subs(x, x0), x0 + h: f.subs(x, x0 + h), x0 + 2 * h: f.subs(x, x0 + 2 * h)}
+    # calculating the derivative
+    return (((-3) * g[x0]) + (4 * g[x0 + h]) - (g[x0 + 2 * h])) / (2 * h)
+
 
 def threePointMidpoint(f, x0, h):
-    return(f[round(x0 + h, 10)] + (-1) * (f[round(x0 - h, 10)])) / (2 * h)
+    # building values table for the func:
+    g = {x0 + h: f.subs(x, x0 + h), x0 - h: f.subs(x, x0 - h)}
+    # calculating the derivative
+    return (g[x0 + h] + (-1) * (g[x0 - h])) / (2 * h)
 
 
 def fivePointMidpoint(f, x0, h):
-    return (f[round(x0 - 2 * h, 10)] + (-8) * f[round(x0 - h, 10)] + 8 * f[round(x0 + h, 10)] - (f[round(x0 + 2 * h, 10)]))/ (12 * h)
+    # building values table for the func:
+    g = {x0 - 2 * h: f.subs(x, x0 - 2 * h), x0 - h: f.subs(x, x0 - h), x0 + h: f.subs(x, x0 + h),
+         x0 + 2 * h: f.subs(x, x0 + 2 * h)}
+    # calculating the derivative
+    return (g[x0 - 2 * h] + (-8) * g[x0 - h] + 8 * g[x0 + h] - (
+        g[x0 + 2 * h])) / (12 * h)
 
 
 def fivePointEndpoint(f, x0, h):
-    return ((-25) * f[round(x0, 10)] + 48 * f[round(x0 + h, 10)] + (- 36) * f[round(x0 + 2 * h, 10)] + 16 * f[
-        round(x0 + 3 * h, 10)] + (- 3) * f[round(x0 + 4 * h, 10)]) / (12 * h)
+    # building values table for the func:
+    g = {x0: f.subs(x, x0), x0 + h: f.subs(x, x0 + h), x0 + 2 * h: f.subs(x, x0 + 2 * h),
+         x0 + 3 * h: f.subs(x, x0 + 3 * h), x0 + 4 * h: f.subs(x, x0 + 4 * h)}
+    # calculating the derivative
+    return ((-25) * g[x0] + 48 * g[x0 + h] + (- 36) * g[x0 + 2 * h] + 16 * g[
+        x0 + 3 * h] + (- 3) * g[x0 + 4 * h]) / (12 * h)
 
